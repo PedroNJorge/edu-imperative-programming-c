@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void hort(int n)
+void horizontal(int n)
 {
     for (int i = 0; i < n; i++)
     {
@@ -19,8 +19,7 @@ void hort(int n)
     }
 }
 
-
-void vert(int n)
+void vertical(int n)
 {
     for (int i = 0; i < 2*n - 1; i++)
     {
@@ -39,12 +38,11 @@ void vert(int n)
     }
 }
 
-
 int main()
 {
     int n, k = 0;
 
     scanf("%d %d", &n, &k);
 
-    k ?  vert(n) : hort(n);
+    k ? vertical(n) : horizontal(n);
 }
