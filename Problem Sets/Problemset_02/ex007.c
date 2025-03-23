@@ -22,13 +22,20 @@ int main() {
     for (j = 0; j < m; j++) {
         scanf("%d", &b[j]);
     }
-    
+    i = j = k = 0; 
     // Merge the sequences a, b into c with two pointers i, j
-    i = j = k = 0;
+    c[0] = min(a[0], b[0]);
+    printf("%d", c[0]);
+        if (a[i] == c[k])
+            i++;
+        else
+            j++;
+    ++k;
+    
     while ((nIsActive = i < n) | (mIsActive = j < m)) {
         if (nIsActive && mIsActive) {
             c[k] = min(a[i], b[j]);
-            printf("%d ", c[k]);
+            printf(" %d", c[k]);
 
             if (a[i] == c[k])
                 i++;
@@ -37,19 +44,19 @@ int main() {
         }
         else if (nIsActive) {
             c[k] = a[i];
-            printf("%d ", c[k]);
+            printf(" %d", c[k]);
             i++;
         }
         else {
             c[k] = b[j];
-            printf("%d ", c[k]);
+            printf(" %d", c[k]);
             j++;
         }
         ++k;
     }
 
-    printf("\b");
-    printf(" \n");
+    //printf("\b");
+    printf("\n");
     
     return 0;
 }

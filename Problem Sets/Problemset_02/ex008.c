@@ -1,39 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MAX_N 100000
+
 int main() {
-    int n, max_cost[2] = {0};
+    int n;
     scanf("%d", &n);
 
-    int mountains[n], cost_array[n];
+    int heights[MAX_N];
 
-    // Get sequence and the max cost and respective index
-    scanf("%d", &mountains[0]);
-    for (int i = 1; i < n; i++) {
-        scanf("%d", &mountains[i]);
-        cost_array[i] = abs(mountains[i-1] - mountains[i]);
-        
-        if (cost_array[i] > max_cost[0]) {
-            max_cost[0] = cost_array[i];
-            max_cost[1] = i;
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &heights[i]);
+    }
+
+    int cost = 0;
+    for (int i = 0; i < n - 1; i++) {
+        cost += abs(heights[i] - heights[i + 1]);
+    }
+
+    int min_cost = cost;
+    int best_start = 0;
+
+    for (int start = 1; start < n; start++) {
+        cost = cost
+            - abs(heights[start - 1] - heights[start])
+            + abs(heights[(start + n - 2) % n] - heights[(start + n - 1) % n]);  // Nova transição
+
+        if (cost < min_cost) {
+            min_cost = cost;
+            best_start = start;
         }
     }
 
-    // Make it circular (calculate the first element with the last)
-    cost_array[0] = abs(mountains[0] - mountains[n-1]);
-    if (cost_array[0] > max_cost[0]) {
-        max_cost[0] = cost_array[0];
-        max_cost[1] = 0;
-    }
-
-    // To minimize the cost, remove the costliest travel
+    // Imprime a melhor sequência
     for (int i = 0; i < n; i++) {
-        printf("%d", mountains[(i+max_cost[1]) % n]);
-        if (i < n - 1)
-            printf(" ");
+        if (i<n-1) {printf("%d ", heights[(best_start + i) % n]);}
+        else {printf("%d", heights[(best_start + i) % n]);}
     }
-
     printf("\n");
- 
+
     return 0;
 }
