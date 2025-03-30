@@ -1,0 +1,87 @@
+
+<!-- saved from url=(0089)https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/2978989874468646?view+PI013_Jogo_da_Vida -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="./base.css" type="text/css">
+</head>
+<body>
+<center>
+<table cellpadding="20" width="100%">
+<tbody><tr>
+<td id="Base">
+
+<title>EDados Problema 48 - Jogo da Vida</title>
+<link rel="StyleSheet" href="./style.css" type="text/css">
+
+
+
+
+
+<h2>[PI013] - Jogo da Vida</h2>
+
+<hr>
+
+<h3>O problema</h3>
+
+<p align="justify">
+O Jogo da Vida (Game of Life ou Life) é um autómato celular proposto em 1970 pelo matemático britânico John Horton Connway. Na realidade, trata-se de uma simulação e não de um jogo com jogadores. Desenvolve-se numa grelha infinita, na qual cada célula pode estar ocupada por um organismo ou não. Células ocupadas dizem-se que estão <b>vivas</b> e as não ocupadas dizem-se <b>mortas</b>. Em cada geração as células que estão vivas mudam o seu estado em função do número de células vizinhas que estão vivas de acordo com as seguintes regras:
+</p>
+
+<ul>
+<li> Os vizinhos de uma célula são as 8 células que a tocam na horizontal, vertical ou diagonal.</li>
+<li> Se uma célula estiver viva e o número de células vizinhas vivas for 0 ou 1, então na geração seguinte a célula morre de solidão.</li>
+<li> Se uma célula está viva e tem 4 ou mais células vizinhas também vivas, então na geração seguinte a célula morre de sobre-povoamento.</li>
+<li> Uma célula viva com 2 ou 3 células vizinhas vivas, continua viva na geração seguinte.</li>
+<li> Se uma célula morta tiver exactamente 3 células vizinhas vivas, muda para o estado de célula viva na geração seguinte.</li>
+<li> Todos os nascimentos e mortes de células têm lugar em simultâneo, isto é as alterações têm por base o estado actual e nunca o estado futuro.</li>
+</ul>
+
+<p>As figuras seguintes ilustram dois estados consecutivos de uma configuração do jogo da vida. </p>
+<p align="justify"><img src="./2978989874468646" align="center" style="padding: 10px;"></p>
+
+Neste problema vamos considerar que a grelha é finita e que as células que a envolvem estão sempre mortas.
+
+<h3>Input</h3>
+
+<p align="justify">A primeira linha contém três inteiros positivos: o número de linhas <b>L</b> e de colunas <b>C</b> que determinam a dimensão da grelha do jogo e o número de iterações <b>I</b> que deverá realizar. (<tt>1 &lt;= <b>L</b>, <b>C</b>, <b>I</b> &lt;= 30</tt>)</p>
+
+<p align="justify">Seguem-se <b>L</b> linhas de caracteres a representar o estado actual do jogo. As células mortas estão representadas por '.' e as vivas por 'O'.</p>
+
+<h3>Output</h3>
+
+<p align="justify">Deve imprimir o estado do jogo ao fim de <b>I</b> iterações, isto é, imprimir a matriz que representa a grelha do jogo com as células mortas marcadas com '.' e as células vivas com 'O'.
+</p>
+
+<h3>Exemplo de input/output</h3>
+
+<table cellpadding="4" border="1">
+<tbody><tr><th>Input</th><th>Output</th></tr>
+<tr><td valign="top" class="left">
+<pre>5 5 5
+.....
+.....
+.OOO.
+.....
+.....
+</pre>
+</td>
+<td valign="top" class="left">
+<pre>.....
+..O..
+..O..
+..O..
+.....
+</pre></td></tr>
+</tbody></table>
+
+<hr>
+
+
+
+</td>
+</tr>
+</tbody></table>
+</center>
+
+
+</body></html>

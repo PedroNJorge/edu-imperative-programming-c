@@ -1,0 +1,251 @@
+
+<!-- saved from url=(0097)https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/2978989874468646?view+PI014_O_Mundo_da_Tartaruga -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="./base.css" type="text/css">
+</head>
+<body>
+<center>
+<table cellpadding="20" width="100%">
+<tbody><tr>
+<td id="Base"> 
+ <title>EDados Problema 101 - O Mundo da Tartaruga</title> 
+<link rel="StyleSheet" href="./style.css" type="text/css"> 
+ 
+ 
+
+<h2>[PI014] - O Mundo da Tartaruga</h2> 
+<hr> 
+
+<h3>O problema</h3> 
+
+<font color="#000000"><img src="./2978989874468646" name="tartaruga" width="300" align="right" border="0"></font>
+
+<p align="justify">
+A linguagem Logo, criada em 1967, tem como objetivo principal o auxílio na aprendizagem de noções geométricas, exploração espacial e
+princípios básicos de programação. Uma das funcionalidades proporcionadas por essa linguagem é a tartaruga (derivada de um robot com esse nome)
+que representa um cursor no écrã ao qual são dadas instruções de movimento e desenho.
+</p>
+
+
+<p align="justify">
+A tartaruga tem incorporada uma caneta que, quando está para baixo, deixa um rasto (que é desenhado no écrã). Sempre que a caneta está para
+cima, o seu movimento não deixa rasto (e nada é desenhado no écrã). </p>
+
+<p align="justify">
+A sua primeira tarefa consiste em começar por definir um mundo para a
+tartaruga; criar uma tartaruga nesse mundo e movimentá-la  segundo um
+conjunto de instruções de modo a criar uma imagem. </p>
+
+<p align="justify">
+Assuma que o mundo da tartaruga é definido por uma grelha, com uma determinada altura e uma determinada largura, por onde a tartaruga
+se poderá movimentar de acordo com o seguinte conjunto de instruções:</p>
+
+<ul>
+<li> <b><t>U (up)</t></b>: levanta a caneta, não deixando rasto; 
+</li><li> <b><t>D (down)</t></b>: baixa a caneta, deixando rasto; 
+</li><li> <b><t>F x (forward)</t></b>: move-se x passos para a frente;
+</li><li> <b><t>L (left)</t></b>: roda para a esquerda; 
+</li><li> <b><t>R (right)</t></b>: roda para a direita.
+</li></ul>
+
+<p align="justify">
+A tartaruga tem associado a si uma grelha, uma posição (x,y), uma
+direção (Norte, Sul, Este e Oeste)  e a posição da caneta (para cima
+ou para baixo).</p>
+
+<p align="justify">
+Quando criada, a tartaruga posiciona-se na localização <b>(0,0)</b>, tendo como referencial o canto superior esquerdo da grelha,
+está virada para <b>Este</b> e tem a caneta para cima.</p>
+
+<p align="justify">
+No caso de serem dadas instruções que impliquem a movimentação da
+tartaruga para fora dos limites da grelha, esta <b>movimenta-se
+o máximo que puder até à fronteira e permanece aí</b>.</p>
+
+<p align="justify">
+Uma vez executado o conjunto de instruções dado à tartaruga e criada
+uma imagem, a segunda e terceira parte da sua tarefa consiste na
+análise da imagem e no reconhecimento de um padrão nessa mesma
+imagem.</p>
+
+<h3>Input</h3> 
+
+<p align="justify">
+A primeira linha do input contém o valor de uma flag que pode tomar os
+valores 0, 1 ou 2.<br>
+A linha seguinte contém dois inteiros <b>LINS</b> e <b>COLS</b> (<tt>1 &lt;= <b>LINS</b>, <b>COLS</b> &lt;= 10</tt>)
+indicando, respectivamente, o número de linhas e colunas que definem a
+grelha da imagem.<br>
+Nas linhas subsequentes estão as instruções a passar à tartaruga, uma
+instrução por linha. O conjunto de instruções termina com a palavra
+<b><t>end</t></b>.<br>
+Cada instrução da forma <b><t>F x</t></b> tem que <tt>1 &lt;= x &lt;= 20</tt>.<br>
+A partir deste ponto do input, é definido o padrão a procurar na imagem.
+Numa primeira linha, dois inteiros <b>N</b> e <b>M</b> (<tt>1 &lt;= <b>N</b>, <b>M</b> &lt;= 10</tt>) indicam,
+respectivamente, o número de linhas e colunas do padrão. As <b>N</b>
+linhas seguintes definem o padrão.  Cada uma dessas linhas possui
+<b>M</b> caracteres ('.' ou '*'), alinhados à esquerda e com o
+espaçamento de 1 carater. </p>
+
+
+<h3>Output</h3> 
+
+<p align="justify">
+No caso do valor da <b>flag ser igual a 0</b>, deverá apresentar no écrã o resultado da execução das instruções fornecidas à tartaruga.
+Para tal, assuma que todas as posições da grelha estão incialmente preenchidas com '.' e que a tartaruga, quando tem a caneta para baixo,
+marca as posições por onde passa com '*'. As posições da grelha devem ser apresentadas alinhadas à esquerda com um espaçamento de 1 carater.</p>
+
+<p align="justify">
+No caso do valor da <b>flag ser igual a 1</b>, deverá indicar, separado por um espaço, a percentagem das posições da grelha marcadas pela tartaruga e,
+o número de linhas e  colunas que não possuem qualquer marca.</p>
+
+<p align="justify">
+No caso da <b>flag ser igual a 2</b>, deverá ler do input o padrão a
+procurar e responder <b><t>Sim</t></b>, no caso deste se encontrar na
+imagem criada pela tartaruga, e <b><t>Nao</t></b> caso contrário.</p>
+
+
+<h3>Exemplos:</h3>
+<h3>
+<table width="470" border="1" cellpadding="4" cellspacing="3">
+<colgroup><col width="381">	<col width="62"> 
+</colgroup><tbody><tr>
+<th width="381"><p>Input</p> </th> 
+<th width="162"> <p>Output</p></th> 
+</tr>
+<tr valign="TOP">
+<td width="381"> 
+<pre style="text-align: left">0
+5 5
+D
+F 4
+U
+R
+R
+F 4
+D
+L
+F 2
+L
+F 2
+L
+L
+U
+F 2
+D
+L
+F 2
+L
+F 4
+end
+3 3
+* . .
+* * *
+* . .
+</pre> 
+</td>
+<td width="162"> <pre style="text-align: left">* * * * * 
+* . . . . 
+* * * . . 
+* . . . . 
+* * * * *
+</pre> </td> 
+</tr> 
+</tbody></table>
+
+</h3><h3>
+<table width="470" border="1" cellpadding="4" cellspacing="3">
+<colgroup><col width="381">	<col width="62"> 
+</colgroup><tbody><tr>
+<th width="381"><p>Input</p> </th> 
+<th width="162"> <p>Output</p></th> 
+</tr>
+<tr valign="TOP">
+<td width="381"> 
+<pre style="text-align: left">1
+5 5
+D
+F 4
+U
+R
+R
+F 4
+D
+L
+F 2
+L
+F 2
+L
+L
+U
+F 2
+D
+L
+F 2
+L
+F 4
+end
+3 3
+* . .
+* * *
+* . .
+</pre> 
+</td>
+<td width="162"> <pre style="text-align: left">60 0 0
+</pre> </td> 
+</tr> 
+</tbody></table>
+
+</h3><h3>
+<table width="470" border="1" cellpadding="4" cellspacing="3">
+<colgroup><col width="381">	<col width="62"> 
+</colgroup><tbody><tr>
+<th width="381"><p>Input</p> </th> 
+<th width="162"> <p>Output</p></th> 
+</tr>
+<tr valign="TOP">
+<td width="381"> 
+<pre style="text-align: left">2
+5 5
+D
+F 4
+U
+R
+R
+F 4
+D
+L
+F 2
+L
+F 2
+L
+L
+U
+F 2
+D
+L
+F 2
+L
+F 4
+end
+3 3
+* . .
+* * *
+* . .
+</pre> 
+</td>
+<td width="162"> <pre style="text-align: left">Sim
+</pre> </td> 
+</tr> 
+</tbody></table>
+
+
+<hr> <div id="footer"> <p>Copyright © 2013 Fernando Silva, DCC, Faculdade de Ciências da Universidade do Porto </p> </div>   
+</h3></td>
+</tr>
+</tbody></table>
+</center>
+
+
+</body></html>

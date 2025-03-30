@@ -1,0 +1,119 @@
+
+<!-- saved from url=(0086)https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/2978989874468646?view+PI015_Anagramas -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="./base.css" type="text/css">
+</head>
+<body>
+<center>
+<table cellpadding="20" width="100%">
+<tbody><tr>
+<td id="Base">
+
+
+
+
+	<link rel="StyleSheet" href="./style.css" type="text/css">
+
+
+
+
+<h2>[PI015] - Anagramas</h2>
+
+<hr>
+
+<h3>O problema</h3>
+
+<p class="center"><b>Anagrama:</b>
+<i>do Gr. aná, para cima, para trás + grámma, letra<br>
+s. m., transposição de letras;<br>
+inversão das letras de um nome para formar outro.</i>
+
+</p><p><img border="1" align="right" width="270" src="./2978989874468646">
+A maior parte dos fãs de quebra-cabeças está habituado a lidar com <b>anagramas</b>, ou seja, grupos de palavras que usam o mesmo conjunto de letras, mas com uma ordem diferente (por exemplo, <tt>sacar</tt>, <tt>casar</tt> e <tt>caras</tt> são anagramas). 
+
+</p><p>Dada uma lista de palavras, a tua tarefa é descobrir que palavras são anagramas uma das outras, e saber o tamanho de cada classe de anagramas. Por classe de anagramas, entende-se o grupo de palavras que usam as mesmas letras.
+
+</p><p>Por exemplo, imagina as seguintes palavras:
+</p><pre>maca
+lima
+cama
+mila
+texto
+</pre>
+
+<p><tt>maca</tt> e  <tt>cama</tt> são anagramas, <tt>lima</tt> e
+<tt>mila</tt> também e <tt>texto</tt> não é anagrama de nenhuma outra palavra.
+Neste caso existem três classes de anagramas. Cada classe de anagrama é repreentada pela palavra alfabeticamente menor dessa classe. Neste caso, as classes seriam representadas respectivamente por cama (classe com 2 palavras), lima (2 palavras) e texto (1 palavra).
+
+</p><h3>Input</h3>
+
+<p>Um input é constituído por vários casos.
+
+</p><p>Cada caso começa por ter um número <b>N</b> indicando o número de palavras
+a processar. Seguem-se <b>N</b> linhas, cada uma contendo uma palavra, que tem no máximo 50 letras, que são todas sempre minúsculas.
+
+</p><p>O input termina com um caso onde <b>N</b> é zero.
+
+</p><h3>Output</h3>
+
+<p>Para cada caso deve começar por ser imprimida uma linha de output, <tt>"#NUM"</tt>, onde
+<tt>NUM</tt> representa o número do caso.
+
+</p><p>De seguida devem vir todas as classes de anagramas no formato <b><tt>"representanteDaClasse tamanhoDaClasse"</tt></b>. As classes devem vir ordenadas pelo seu tamanho (por ordem decrescente), e em caso de empate, pela ordem alfabética das suas palavras representantes.
+
+</p><p>O output entre dois casos deve ser sempre separado por uma linha.
+
+</p><p>Vê o exemplo para clarificar a maneira como deve ser feito o output.<br>
+
+</p><h3>Exemplo de input/output</h3>
+
+<table class="main" cellpadding="5" border="1">
+<tbody><tr>
+       <th width="150">Input</th>
+       <th width="150">Output</th>
+</tr>
+<tr>
+       <td valign="top" class="left">
+<pre>5
+maca
+lima
+cama
+mila
+texto
+3
+caras
+casar
+sacar
+1
+teste
+0
+
+</pre>
+	   </td>
+       <td valign="top" class="left">
+<pre>#1
+cama: 2
+lima: 2
+texto: 1
+
+#2
+caras: 3
+
+#3
+teste: 1
+</pre></td>
+</tr>
+</tbody></table>
+
+<hr>
+
+
+
+</td>
+</tr>
+</tbody></table>
+</center>
+
+
+</body></html>

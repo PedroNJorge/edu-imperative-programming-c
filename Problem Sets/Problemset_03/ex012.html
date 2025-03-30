@@ -1,0 +1,134 @@
+
+<!-- saved from url=(0091)https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/2978989874468646?view+PI012_Sopa_de_Letras -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="./base.css" type="text/css">
+</head>
+<body>
+<center>
+<table cellpadding="20" width="100%">
+<tbody><tr>
+<td id="Base">
+
+
+
+
+	<link rel="StyleSheet" href="./style.css" type="text/css">
+
+
+
+
+<h2>[PI012] - Sopa de Letras</h2>
+
+<hr>
+
+<h3>O problema</h3>
+
+<p>Todos conhecem o puzzle da "Sopa de Letras", que consiste basicamente em encontrar palavras, num
+emaranhado de letras.
+
+</p><p>Uma sopa de letras é basicamente um quadriculado de letras, sempre maiúsculas, e uma palavra pode ser
+encontrada apenas na horizontal (da direita para a esquerda ou da esquerda para a direita) ou na vertical
+(de cima para baixo, ou de baixo para cima). Para estes problema, <b>as palavras não podem vir na
+diagonal</b>.
+
+</p><p>A tua tarefa é resolver uma sopa de letras.
+
+</p><p>Por exemplo, imagina que tinhas de procurar as seguintes palavras na sopa de letras da figura:
+
+</p><pre>SOPA
+LETRA
+EDA</pre>
+
+<img src="./2978989874468646" width="700" height="178" alt="" border="1">
+
+<p>A ideia é que o teu programa descubra onde estão as palavras. Para que mostres que realmente as
+descobriste, todas as letras que não pertencem a palavras devem ser substituidas por um ponto, como
+exemplificado na figura. Consulta o exemplo de input e output para clarificares o que deves fazer.
+
+</p><h3>Input</h3>
+
+<p>Um ficheiro de input contém vários casos de teste.
+</p><p>A primeira linha de teste contém dois números <tt>LINS COLS</tt>, indicando respectivamente
+o número de linhas e colunas da sopa de letras (<tt>1 ≤ LINS,COLS ≤ 100</tt>).
+</p><p>Seguem-se LINS linhas de input, cada uma contendo COLS letras maiúsculas, sem espaços a separá-las.
+</p><p>De seguida vem <tt>N</tt> (<tt>1 ≤ N ≤ 50</tt>), o número de palavras a pesquisar, sendo que as N linhas
+seguintes contêm precisamente as palavras, também apenas representadas por letras maiúsculas (cada palavra
+tem o tamanho máximo de 50 letras). É garantido que todas estas palavras aparecem no input apenas uma só vez
+(numa das quatro direcções válidas)
+</p><p>Um caso com 0 linhas e 0 colunas sinaliza o final do input, e não deve ser processado.
+
+</p><h3>Output</h3>
+
+<p>Para cada caso deve começar por ser imprimida uma linha de output, <tt>"Input #NUM"</tt>, onde
+<tt>NUM</tt> representa o número do caso, seguido da impressão da sopa de letras, no formato pedido,
+com as palavras destacadas.
+
+</p><p>Vê o exemplo para clarificar a maneira como deve ser feito o output.<br>
+
+</p><h3>Exemplo de input/output</h3>
+
+<table class="main" cellpadding="8" border="1">
+<tbody><tr>
+       <th>Input</th>
+       <th>Output</th>
+</tr>
+<tr>
+       <td valign="top" class="left">
+<pre>4 5
+SBCDA
+OFGHD
+PJKLE
+ARTEL
+3
+SOPA
+LETRA
+EDA
+8 10
+EABDFGHJNM
+SASDDFOCVB
+TXSCSFTCAQ
+EZVFACILSD
+AQWUHNUFSV
+PROBLEMADA
+HCVDASEFVB
+WMLFACIFSD
+5
+ESTE
+PROBLEMA
+FICA
+MUITO
+FACIL
+0 0
+</pre>
+	   </td>
+       <td valign="top" class="left">
+<pre>Input #1
+S...A
+O...D
+P...E
+ARTEL
+Input #2
+E.........
+S.....O...
+T.....T...
+E..FACIL..
+......U...
+PROBLEMA..
+..........
+....ACIF..
+</pre></td>
+</tr>
+</tbody></table>
+
+<hr>
+
+
+
+</td>
+</tr>
+</tbody></table>
+</center>
+
+
+</body></html>
