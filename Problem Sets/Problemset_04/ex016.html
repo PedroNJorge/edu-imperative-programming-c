@@ -1,0 +1,127 @@
+
+<!-- saved from url=(0087)https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/2978989874468646?view+PI016_Morse_Code -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="./base.css" type="text/css">
+</head>
+<body>
+<center>
+<table cellpadding="20" width="100%">
+<tbody><tr>
+<td id="Base">
+
+
+
+<title>[PI016] - Signal in the Silence</title>
+<meta name="description" content="[PI016] - Morse Code">
+<link rel="StyleSheet" href="./style.css" type="text/css">
+
+
+
+
+
+<h1><a name="SECTION00020000000000000000">
+[PI016] - Morse Code</a>
+</h1>
+
+<p>
+<img src="./2978989874468646" style="width: auto; height: 500px;" align="right">
+</p>
+
+<h2><a name="SECTION00021000000000000000">
+Task</a>
+</h2>
+
+<p>
+The year is 2125. Earth has long established communication relays on distant planets and moons. One of those outposts — Station Zeta on Europa — has just sent a distress transmission back to Earth.
+
+</p><p>But the signal is encoded in binary Morse code — the old-fashioned method of communication from the early 20th century — a failsafe system used only in extreme emergencies when all modern channels are offline.
+
+</p><p>It's your job as part of the Earth Command decoding team to write a program that will decode this cryptic stream of binary characters into readable text.
+</p>
+
+<p>The message comes in as a long string of 0s and 1s.<br>
+</p><ul>
+<li> <b>1</b>s indicate that a pulse was sent.<br>
+</li><li> <b>0</b>s indicate silence (no pulse being sent).
+</li></ul>
+
+<p>
+All messages are composed of uppercase alphabetical letters (A to Z) and numerical characters (0 to 9). 
+All words are separated by just one space.
+The message starts and ends with a non-whitespace character.
+</p>
+<p>
+The image illustrates the encoding. For example, the letter 'A' is encoded as "dot space dash" and it corresponds to 5 (1+1+3) units which in binary is "10111".
+</p>
+
+<h2>
+Input
+</h2>
+
+Input consists of one line with characters '0' and '1'.
+
+<h2>
+Ouput
+</h2>
+
+You have to print the encoded message. The encoded message will have at least 1 and at most 50 characters.
+
+<h2><a name="SECTION00022000000000000000">
+Example 1</a>
+</h2>
+
+<h3><a name="SECTION00022100000000000000">
+Input</a>
+</h3>
+
+<div style="width : 100px; word-wrap: break-word;">
+<pre>101110001110101010001110101110100011101010001000101011101000111011101000101010100010100010111011101110001110101110001011101010001110111000111010001110111011100010111011101000111011101011100010111010001010100011100010101110001010101110001011101110001110101011100011101011101110001110111010100011101110111011101110001011101110111011100010101110111011100010101011101110001010101011100010101010100011101010101000111011101010100011101110111010100011101110111011101
+</pre>
+</div>
+
+<p>
+
+</p><h3><a name="SECTION00022200000000000000">
+Output</a>
+</h3>
+
+<pre>ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+</pre>
+
+<p><b>Note:</b> This output example includes of all the characters that are used.
+
+</p><h2><a name="SECTION00023000000000000000">
+Example 2</a>
+</h2>
+
+
+<h3><a name="SECTION00023100000000000000">
+Input</a>
+</h3>
+
+<pre>101010100010001011101010001011101010001110111011100000001011101110001110111011100010111010001011101010001110101
+</pre>
+
+<h3><a name="SECTION00023200000000000000">
+Output</a>
+</h3>
+
+<pre>HELLO WORLD
+</pre>
+<br><hr>
+
+<p align="center">
+Programação Imperativa (CC1003)<br>
+DCC/FCUP - Faculdade de Ciências da Universidade do Porto
+</p>
+<hr>
+
+
+</td>
+</tr>
+</tbody></table>
+</center>
+
+
+</body></html>
