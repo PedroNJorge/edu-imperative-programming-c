@@ -1,0 +1,146 @@
+
+<!-- saved from url=(0083)https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/2978989874468646?view+PI023_Racing -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="./base.css" type="text/css">
+</head>
+<body>
+<center>
+<table cellpadding="20" width="100%">
+<tbody><tr>
+<td id="Base">
+
+
+
+<title>[PI023] - Racing</title>
+<meta name="description" content="[PI023] - Racing">
+<link rel="StyleSheet" href="./style.css" type="text/css">
+
+
+
+
+
+<h1><a name="SECTION00020000000000000000">
+[PI023] - Racing</a>
+</h1>
+
+<p>
+<img src="./2978989874468646" style="height: 300px;" align="right">
+</p>
+
+<p>There’s a collection of race cars, and each car requires a minimum skill level to drive.
+You also have a group of drivers, each with their own skill level.
+
+</p><p>Your goal is to determine, for each driver, the most difficult (i.e. highest skill-requirement) car they are able to drive.
+
+</p><h2><a name="SECTION00021000000000000000">
+Task</a>
+</h2>
+
+<p>You are given a sorted list of integers representing the skill levels required to drive each car in the collection.
+You are also given a list of integers representing the skill level of each driver.
+
+</p><p>For each driver, find the car with the highest skill requirement that they can still drive.
+If a driver can't drive any car, the answer is <tt>0</tt>.
+
+</p><h2>
+Input
+</h2>
+
+<ul>
+<li>The first line contains an integer <tt>n</tt> (<tt>1 ≤ n ≤ 200,000</tt>) — the number of cars.
+
+</li><li>The second line contains <tt>n</tt> integers in increasing order (each between 1 and 1,000,000,000), representing the required skill for each car.
+
+</li><li>The third line contains an integer <tt>m</tt> (<tt>1 ≤ m ≤ 200,000</tt>) — the number of drivers.
+
+</li><li>The fourth line contains <tt>m</tt> integers (each between 1 and
+1,000,000,000), representing the skill level of each driver.
+</li></ul>
+
+<h2>
+Ouput
+</h2>
+
+Print one line with <tt>m</tt> integers separated by spaces.
+For each driver, print the skill requirement of the hardest car they
+can drive (i.e. with highest skill).
+If a driver can’t drive any car, print 0 instead.
+
+
+<h2><a name="SECTION00022000000000000000">
+Example 1</a>
+</h2>
+
+<h3><a name="SECTION00022100000000000000">
+Input</a>
+</h3>
+
+<pre>3
+3 5 6
+4
+1 4 5 7
+</pre>
+
+<p>
+
+</p><h3><a name="SECTION00022200000000000000">
+Output</a>
+</h3>
+
+<pre>0 3 5 6
+</pre>
+
+<h3>
+Explanation
+</h3>
+<ul>
+<li>The first driver has a skill level of 1. The easiest car requires
+  3, so this driver can't drive any car. Thus the output is 0.
+
+</li><li>The second driver has a skill level of 4. They can only drive the
+  car that requires 3. Thus the output is 3
+
+</li><li>The third driver has a skill level of 5. He can drive cars that
+  require 3 and 5. The hardest is 5. Thus the output is 5
+
+</li><li>The fourth driver has a skill level of 7. He can drive all cars in
+the list (3, 5, and 6). The hardest is 6. The output is 6
+
+<h2><a name="SECTION00023000000000000000">
+Example 2</a>
+</h2>
+
+
+<h3><a name="SECTION00023100000000000000">
+Input</a>
+</h3>
+
+<pre>3
+2 2 2
+4
+4 2 2 1
+</pre>
+
+<h3><a name="SECTION00023200000000000000">
+Output</a>
+</h3>
+
+<pre>2 2 2 0
+</pre>
+  
+<br><hr>
+<p align="center">
+Programação Imperativa (CC1003)<br>
+DCC/FCUP - Faculdade de Ciências da Universidade do Porto
+</p>
+<hr>
+
+
+</li></ul></td>
+</tr>
+</tbody></table>
+</center>
+
+
+</body></html>
