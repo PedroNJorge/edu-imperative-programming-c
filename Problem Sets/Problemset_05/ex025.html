@@ -1,0 +1,193 @@
+
+<!-- saved from url=(0087)https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/2978989874468646?view+PI025_Mana_Hoard -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="./base.css" type="text/css">
+</head>
+<body>
+<center>
+<table cellpadding="20" width="100%">
+<tbody><tr>
+<td id="Base">
+
+
+
+<title>[PI023] - Mana Hoarding</title>
+<meta name="description" content="[PI025] - Mana Hoarding">
+<link rel="StyleSheet" href="./style.css" type="text/css">
+
+
+
+
+
+<h1><a name="SECTION00020000000000000000">
+[PI025] - Mana Hoarding</a>
+</h1>
+
+<p>
+<img src="./2978989874468646" style="width: auto; height: 400px;" align="right">
+</p>
+
+<p>You are a magician planning an attack on a dragon that has been
+destroying nearby villages. You would like to distract the dragon as
+early as possible, but you are afraid of not being powerful enough to sustain its
+attacks.</p>
+
+<p>You managed to look into the future and you know exactly how the
+mana will fluctuate. This will affect both your training and the dragon attacks. You also know that at the end of your predictions, if you are alive you will manage to scare the dragon away.</p>
+<p>What is the earliest you can approach the dragon so that you minimize the damage to the villages?</p>
+
+<h2><a name="SECTION00021000000000000000">
+Task</a>
+</h2>
+
+<p>
+You have a starting strength of <tt>0</tt>.
+</p>
+<p>
+You have a training skill <tt>T</tt>.
+If you train on a day with fluctuation <tt>x</tt>, you will gain a strength of <tt>(T + x)²</tt>.
+</p>
+
+<p>
+The dragon has a fire strength <tt>F</tt> that starts at <tt>0</tt>.
+Once you approach the dragon, it will immediately start increasing its fire strength and attacking you.
+</p>
+<p>
+On a day with mana fluctuation <tt>x</tt>, the strength of the fire increases by <tt>x</tt>.
+On a day the dragon attacks you, it decreases your strength by <tt>F²</tt>.
+</p>
+<p>
+If at any point your strength goes below <tt>0</tt>, you die, the
+dragon will never be scared away and the kingdom is lost.
+</p>
+
+<p>
+All mana fluctuation values are either <tt>0</tt> or <tt>1</tt>.
+</p>
+
+<p>
+You are guaranteed that your strength and the dragon’s damage will never exceed <tt>1,000,000,000</tt>.
+</p>
+
+<h2>
+Input
+</h2>
+
+<p>
+The first line of input has two integers, separated by a space,
+the number of days until the day you'll manage to scare the dragon away,
+<tt>n</tt> (<tt>1 ≤ n ≤ 100'000</tt>) and your training strength <tt>T</tt>
+(<tt>0 ≤ T ≤ 50</tt>).
+</p>
+
+<p>
+The second line of input has <tt>n</tt> integers, separated by a space.
+Each integer is either a <tt>0</tt> or a <tt>1</tt> and they correspond to the daily mana fluctuations.
+</p>
+
+<h2>
+Output
+</h2>
+
+<p>
+Print one line with the day you should approach the dragon.
+</p>
+
+<h2><a name="SECTION00022000000000000000">
+Example 1</a>
+</h2>
+
+<h3><a name="SECTION00022100000000000000">
+Input</a>
+</h3>
+
+<pre>3 0
+0 1 0
+</pre>
+
+<p>
+
+</p><h3><a name="SECTION00022200000000000000">
+Output</a>
+</h3>
+
+<pre>3
+</pre>
+
+<h3>
+Explanation
+</h3>
+
+<p>
+If you approach the dragon on the first day, your strength will be <tt>0</tt> and the dragon damage will be <tt>0²+1²+1² = 2</tt>.
+</p>
+
+<p>
+If you approach the dragon on the second day, your strength will be <tt>(0+0)² = 0</tt> and the dragon damage will be <tt>1²+1² = 2</tt>.
+</p>
+
+<p>
+If you approach the dragon on the third day, your strength will be <tt>(0+0)² + (0+1)² = 1</tt> and the dragon damage will be <tt>0² = 0</tt>.
+</p>
+
+<p>
+Therefore, the earliest you can approach the dragon is on the third day.
+</p>
+
+<h2><a name="SECTION00023000000000000000">
+Example 2</a>
+</h2>
+
+
+<h3><a name="SECTION00023100000000000000">
+Input</a>
+</h3>
+
+<pre>3 3
+0 0 0
+</pre>
+
+<h3><a name="SECTION00023200000000000000">
+Output</a>
+</h3>
+
+<pre>1
+</pre>
+
+
+<h2>
+Example 3
+</h2>
+
+<h3>
+Input
+</h3>
+
+<pre>3 0
+0 0 1
+</pre>
+
+<h3>
+Output
+</h3>
+
+<pre>4
+</pre>
+
+<br><hr>
+<p align="center">
+Programação Imperativa (CC1003)<br>
+DCC/FCUP - Faculdade de Ciências da Universidade do Porto
+</p>
+<hr>
+
+
+
+</td>
+</tr>
+</tbody></table>
+</center>
+
+
+</body></html>
