@@ -1,0 +1,216 @@
+
+<!-- saved from url=(0087)https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/4015612245544611?view+PI042_PizzaQuest -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="./base.css" type="text/css">
+</head>
+<body bgcolor="white">
+<center>
+<table cellpadding="20" width="100%">
+<tbody><tr>
+<td id="Base">
+  
+    
+    <title>[PI042] Pizza Quest</title>
+<meta name="description" content="[PI042] - Pizza Quest">
+<link rel="StyleSheet" href="./style.css" type="text/css">
+
+  
+
+
+
+<p id="en"> <b>English version</b> | [<a href="https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/4015612245544611?view+PI042_PizzaQuest#pt">ver versão em português</a>]</p>
+
+<h2>[PI042] Pizza Quest</h2>
+
+<p><img src="./4015612245544611" align="right" width="300">
+
+</p><p>There’s a city-wide blackout, and the automatic doors of the local supermarket just opened for a limited time. Julie Tribbiani is on a mission: rescue the last pizza before it’s gone forever.</p>
+
+<p>But there’s a catch — the supermarket has turned into a maze of toppled shelves and blocked aisles, and Julie’s sense of direction isn’t exactly award-winning. Starting from his current position, he needs to figure out if he can navigate through the maze to reach the pizza.</p>
+
+<h3>The Supermarket Maze</h3>
+
+<p>The layout of the supermarket is given as a 2D grid:</p>
+<ul>
+<li>    'J' marks Julie's starting point.
+
+</li><li>    'P' marks the precious pizza.
+
+</li><li>    '.' marks a walkable path (clear floor).
+
+</li><li>    '#' marks a wall or obstacle.
+</li></ul>
+<p>Julie can move up, down, left, or right — but not diagonally (he’s wearing flip-flops, after all).</p>
+
+
+  <h3>The Problem</h3>
+
+<p>For each supermarket layout, determine whether there exists a valid path from Julie to the pizza, using only walkable cells ('.').</p>
+
+<h3>Input</h3>
+
+<p>The first line contains an integer <tt>N (1 ≤ N ≤ 20)</tt> — the number of test cases.</p>
+
+<p>Each test case consists of:</p>
+<ul>
+<li>    A line with two integers <tt>R</tt> and <tt>C</tt> (<tt>1 ≤ R, C ≤ 100</tt>) — the number of rows and columns in the grid.
+
+</li><li>    Followed by <tt>R</tt> lines, each with <tt>C</tt> characters representing the map.
+</li></ul>
+
+<p>There will always be exactly one <tt>'J'</tt> and one <tt>'P'</tt> in each map.</p>
+
+<h3>Output</h3>
+
+<p>Print <tt>N</tt> lines — one per test case. For each, print:</p>
+<ul>
+  <li> <tt>yes</tt>, if Julie can reach the pizza
+
+  </li><li> <tt>no</tt>, if there's no path to it
+</li></ul>
+
+<br>
+
+<h3>Example Input 1</h3>
+<pre>2
+5 10
+..#.......
+###...#...
+..#...#.PS
+.J#...####
+......#...
+4 4
+J..#
+..#.
+.#..
+#..P
+</pre>
+
+<h3>Example Output 1</h3>
+<pre>yes
+no
+</pre>
+
+<p>On the first case Julie can reach all the positions in green, which
+include reaching the pizza (hence, the answer is "yes"):</p>
+
+<pre>..#<span style="background-color:#aaffaa;">.......</span>
+###<span style="background-color:#aaffaa;">...</span>#<span style="background-color:#aaffaa;">...</span>
+<span style="background-color:#aaffaa;">..</span>#<span style="background-color:#aaffaa;">...</span>#<span style="background-color:#aaffaa;">..P</span>
+<span style="background-color:#aaffaa;">.J</span>#<span style="background-color:#aaffaa;">...</span>####
+<span style="background-color:#aaffaa;">......</span>#...
+</pre>
+
+On the second case Julie can reach all the positions in green, but has
+no way to reach the pizza (hence, the answer is "no"):
+
+<pre><span style="background-color:#aaffaa;">J..</span>#
+<span style="background-color:#aaffaa;">..</span>#.
+<span style="background-color:#aaffaa;">.</span>#..
+#..P
+</pre>
+
+<hr size="2">
+
+<p id="pt"> <b>Versão em Português</b> | [<a href="https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/4015612245544611?view+PI042_PizzaQuest#en">see english version</a>]</p>
+
+<h2>[PI042] Missão Pizza</h2>
+
+<p><img src="./4015612245544611" align="right" width="300">
+
+</p><p>Há um apagão geral na cidade, e as portas automáticas do supermercado local abriram por tempo limitado. Julie Tribbiani está em uma missão: resgatar a última pizza antes que ela desapareça para sempre.</p>
+
+<p>Mas há um problema — o supermercado virou um labirinto de prateleiras tombadas e corredores bloqueados, e o senso de direção da Julie não é dos melhores. Partindo da sua posição atual, ela precisa descobrir se consegue navegar pelo labirinto até chegar à pizza.</p>
+
+<h3>O Labirinto do Supermercado</h3>
+
+<p>A planta do supermercado é representada por uma grelha 2D:</p>
+<ul>
+<li>    'J' marca a posição inicial da Julie.
+
+</li><li>    'P' marca a localização da preciosa pizza.
+
+</li><li>    '.' representa um caminho livre (chão desimpedido).
+
+</li><li>    '#' representa uma parede ou obstáculo.
+</li></ul>
+<p>Julie pode mover-se para cima, baixo, esquerda ou direita — mas não na diagonal (afinal, ela está de chinelos).</p>
+
+<h3>O Problema</h3>
+
+<p>Para cada planta do supermercado, determine se existe um caminho válido de Julie até a pizza, usando apenas células caminháveis ('.').</p>
+
+<h3>Entrada</h3>
+
+<p>A primeira linha contém um inteiro <tt>N (1 ≤ N ≤ 20)</tt> — o número de casos de teste.</p>
+
+<p>Cada caso de teste consiste em:</p>
+<ul>
+<li>    Uma linha com dois inteiros <tt>R</tt> e <tt>C</tt> (<tt>1 ≤ R, C ≤ 100</tt>) — o número de linhas e colunas da grelha.
+
+</li><li>    Seguidas por <tt>R</tt> linhas, cada uma com <tt>C</tt> caracteres representando o mapa.
+</li></ul>
+
+<p>Haverá sempre exatamente um <tt>'J'</tt> e um <tt>'P'</tt> em cada mapa.</p>
+
+<h3>Saída</h3>
+
+<p>Imprima <tt>N</tt> linhas — uma por caso de teste. Para cada uma, imprima:</p>
+<ul>
+  <li> <tt>yes</tt>, se Julie consegue alcançar a pizza
+
+  </li><li> <tt>no</tt>, se não há caminho até ela
+</li></ul>
+
+<br>
+
+<h3>Exemplo de Entrada 1</h3>
+<pre>2
+5 10
+..#.......
+###...#...
+..#...#.PS
+.J#...####
+......#...
+4 4
+J..#
+..#.
+.#..
+#..P
+</pre>
+
+<h3>Exemplo de Saída 1</h3>
+<pre>yes
+no
+</pre>
+
+<p>No primeiro caso, Julie consegue alcançar todas as posições em verde, incluindo a pizza (portanto, a resposta é "yes"):</p>
+
+<pre>..#<span style="background-color:#aaffaa;">.......</span>
+###<span style="background-color:#aaffaa;">...</span>#<span style="background-color:#aaffaa;">...</span>
+<span style="background-color:#aaffaa;">..</span>#<span style="background-color:#aaffaa;">...</span>#<span style="background-color:#aaffaa;">..P</span>
+<span style="background-color:#aaffaa;">.J</span>#<span style="background-color:#aaffaa;">...</span>####
+<span style="background-color:#aaffaa;">......</span>#...
+</pre>
+
+<p>No segundo caso, Julie consegue alcançar todas as posições em verde, mas não tem como chegar até a pizza (portanto, a resposta é "no"):</p>
+
+<pre><span style="background-color:#aaffaa;">J..</span>#
+<span style="background-color:#aaffaa;">..</span>#.
+<span style="background-color:#aaffaa;">.</span>#..
+#..P
+</pre>
+
+<hr size="2">
+<p align="center">Teste Prático de Programação Imperativa (CC1003)<br>
+DCC/FCUP - Faculdade de Ciências da Universidade do Porto</p>
+
+
+</td>
+</tr>
+</tbody></table>
+</center>
+
+
+</body></html>
