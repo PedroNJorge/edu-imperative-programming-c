@@ -1,0 +1,185 @@
+
+<!-- saved from url=(0089)https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/9415981350194654?view+PI056_WellBalanced -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="./base.css" type="text/css">
+</head>
+<body bgcolor="white">
+<center>
+<table cellpadding="20" width="100%">
+<tbody><tr>
+<td id="Base">
+
+<title>[PI056] - Well balanced Expressions</title>
+<meta name="description" content="[PI056] - Well balanced Expressions">
+<link rel="StyleSheet" href="./style.css" type="text/css">
+
+
+
+
+
+<p id="en"><img src="./9415981350194654" height="20"> <b>English version</b> | [<a href="https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/9415981350194654?view+PI056_WellBalanced#pt">ver versão em português</a>]</p>
+
+<h2>[PI056] Well-Balanced Expressions</h2>
+
+<p><img src="./9415981350194654(1)" align="right"><font color="red">In this
+problem, you should only submit a file named <b>pi056.c</b> containing
+a line with <tt>#include "stack.h"</tt> and the implementation of a
+function <b>balanced</b> as described below (a complete program is not
+required). Check code at the end and explanation on how to compile.</font>
+
+</p><p>You may assume that on Mooshak you will have access to the "stack implementation code" as provided in class.
+
+</p><hr>
+
+<h3>Function to Submit</h3>
+
+<p></p><li><b><tt>boolean balanced(String s)</tt></b>
+
+<p>This function receives a string composed only of round and square parentheses, and returns <i>true</i> if the expression is well-formed, and <i>false</i> otherwise.</p>
+
+<p>For example, <tt>"([()])"</tt> and <tt>"[()()]"</tt> are well-formed expressions, while <tt>"(()]"</tt>, <tt>"[()[])"</tt>, and <tt>"[()[]"</tt> are not balanced (some parentheses are not closed or are closed incorrectly).</p>
+
+<hr>
+
+<h3>Input/Output Examples</h3>
+
+<table class="main" cellpadding="4" border="1">
+<tbody><tr>
+       <th>Call</th>
+       <th>Result</th>
+</tr>
+<tr>
+  <td valign="top" class="left">balanced(<tt>"([()])"</tt>)</td>
+  <td valign="top" class="left">true</td>
+</tr>
+<tr>
+  <td valign="top" class="left">balanced(<tt>"[()()]"</tt>)</td>
+  <td valign="top" class="left">true</td>
+</tr>
+<tr>
+  <td valign="top" class="left">balanced(<tt>"(()]"</tt>)</td>
+  <td valign="top" class="left">false</td>
+</tr>
+<tr>
+  <td valign="top" class="left">balanced(<tt>"[()[])"</tt>)</td>
+  <td valign="top" class="left">false</td>
+</tr>
+<tr>
+  <td valign="top" class="left">balanced(<tt>"[()[]"</tt>)</td>
+  <td valign="top" class="left">false</td>
+</tr>
+</tbody></table>
+
+<hr size="2">
+
+<p id="pt"><img src="./9415981350194654(2)" height="20"> <b>Versão em Português</b> | [<a href="https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/9415981350194654?view+PI056_WellBalanced#en">see english version</a>]</p>
+
+<h2>[PI056] Expressões bem balanceadas</h2>
+
+<p><img src="./9415981350194654(1)" align="right"><font color="red">Neste problema
+deverá apenas submeter um ficheiro <b>pi056.c</b> contendo uma linha
+com <tt>#include "stack.h"</tt> e a implementação de uma função
+<b>balanced</b> como a seguir descrito (não é necessário um programa
+completo). Veja o código no final, bem como como copilar.</font>
+
+</p><p>Pode assumir que terá acesso no Mooshak ao "código qye implementa uma pilha" como dadas nas aulas.
+
+</p><hr>
+
+<h3>Método a submeter</h3>
+
+<p></p></li><li><b><tt>boolean balanced(String s)</tt></b>
+
+    <p>Recebe uma string formada apenas por parenteses rectos e curvos, e devolve <i>true</i> caso a expressão esteja bem formada e <i>false</i> caso contrário.</p>
+
+    <p>Por exemplo, <tt>"([()])"</tt> e <tt>"[()()]"</tt> são expressões bem formadas, ao passo que <tt>"(()]"</tt>, <tt>"[()[])"</tt> ou <tt>"[()[]"</tt> não estão balanceadas (faltam parenteses por fechar ou fecham os parenteses errados).</p>
+
+<hr>
+
+<h3>Exemplos de input/output</h3>
+
+<table class="main" cellpadding="4" border="1">
+<tbody><tr>
+       <th>Chamada</th>
+       <th>Resultado</th>
+</tr>
+<tr>
+  <td valign="top" class="left">balanced(<tt>"([()])"</tt>)</td>
+  <td valign="top" class="left">true</td>
+</tr>
+<tr>
+  <td valign="top" class="left">balanced(<tt>"[()()]"</tt>)</td>
+  <td valign="top" class="left">true</td>
+</tr>
+<tr>
+  <td valign="top" class="left">balanced(<tt>"(()]"</tt>)</td>
+  <td valign="top" class="left">false</td>
+</tr>
+<tr>
+  <td valign="top" class="left">balanced(<tt>"[()[])"</tt>)</td>
+  <td valign="top" class="left">false</td>
+</tr>
+<tr>
+  <td valign="top" class="left">balanced(<tt>"[()[]"</tt>)</td>
+  <td valign="top" class="left">false</td>
+</tr>
+</tbody></table>
+
+<hr>
+<h3>Como compilar localmente</h3>
+
+<p>Para compilar localmente vai precisar de ter os ficheiros seguintes:
+</p><ul>
+  <li> stack.h e stack.c -- implementação de uma stack. Verificar se o
+  NodeInfo está configurado para o tipo de dados a guardar na stack.
+  </li><li> pi056.c -- o seu código com a função pedida
+  </li><li> tests056.c -- ficheiro com a função main() e onde se trata da
+  leitura e escrita.
+</li></ul>
+<p>Para compilar execute na pasta onde estão os ficheiros: <tt>gcc
+tests056.c stack.c pi056.c</tt> que vai gerar um executável <tt>a.out</tt>
+
+</p><p><b>Código para testes</b>, ficheiro: <tt>tests056.c</tt></p>
+
+<!-- HTML generated using hilite.me --><div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #60a0b0; font-style: italic">// PI056 Testing</span>
+<span style="color: #60a0b0; font-style: italic">//</span>
+
+<span style="color: #007020">#include "stack.h"</span>
+
+<span style="color: #007020">#define MAXCHARS 1000</span>
+
+<span style="color: #902000">bool</span> <span style="color: #06287e">balanced</span>(<span style="color: #902000">char</span> <span style="color: #666666">*</span>);
+
+<span style="color: #902000">int</span> <span style="color: #06287e">main</span>() {	
+  <span style="color: #902000">int</span> n;
+  scanf(<span style="color: #4070a0">"%d"</span>,<span style="color: #666666">&amp;</span>n);  <span style="color: #60a0b0; font-style: italic">// number of expressions</span>
+  getchar();
+  <span style="color: #007020; font-weight: bold">const</span> <span style="color: #902000">char</span> <span style="color: #666666">*</span>v[<span style="color: #40a070">2</span>]<span style="color: #666666">=</span>{<span style="color: #4070a0">"false"</span>,<span style="color: #4070a0">"true"</span>};
+
+  <span style="color: #007020; font-weight: bold">for</span> (<span style="color: #902000">int</span> i<span style="color: #666666">=</span><span style="color: #40a070">0</span>; i<span style="color: #666666">&lt;</span>n; i<span style="color: #666666">++</span>) {
+    <span style="color: #902000">char</span> <span style="color: #666666">*</span>expr<span style="color: #666666">=</span> (<span style="color: #902000">char</span> <span style="color: #666666">*</span>) malloc(MAXCHARS);
+    fgets(expr,MAXCHARS, stdin);          <span style="color: #60a0b0; font-style: italic">// read expression</span>
+    expr[strcspn(expr, <span style="color: #4070a0">"</span><span style="color: #4070a0; font-weight: bold">\n</span><span style="color: #4070a0">"</span>)] <span style="color: #666666">=</span> <span style="color: #4070a0">'\0'</span>;     <span style="color: #60a0b0; font-style: italic">// replace \n by \0</span>
+    printf(<span style="color: #4070a0">"%s: %s</span><span style="color: #4070a0; font-weight: bold">\n</span><span style="color: #4070a0">"</span>, expr, v[(<span style="color: #902000">int</span>)balanced(expr)]);
+    free(expr);
+  }
+}
+</pre></div>
+
+
+<hr size="2">
+
+<p align="center">Programação Imperativa (CC1003)<br>
+DCC/FCUP - Faculdade de Ciências da Universidade do Porto</p>
+
+
+
+
+</li></td>
+</tr>
+</tbody></table>
+</center>
+
+
+</body></html>
