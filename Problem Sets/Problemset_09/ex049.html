@@ -1,0 +1,287 @@
+
+<!-- saved from url=(0092)https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/9415981350194654?view+PI049_Lake_Bulldozing -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="./base.css" type="text/css">
+</head>
+<body bgcolor="white">
+<center>
+<table cellpadding="20" width="100%">
+<tbody><tr>
+<td id="Base">
+
+<title>[PI049] - Lake Bulldozing</title>
+<meta name="description" content="[PI049] - Lake Bulldozing">
+<meta name="description" content="[PI052] - Reverse Polish Notation">
+<link rel="StyleSheet" href="./style.css" type="text/css">
+
+
+
+
+
+
+<p id="en"><img src="./9415981350194654" height="20"> <b>English version</b> | [<a href="https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/9415981350194654?view+PI049_Lake_Bulldozing#pt">ver versão em português</a>]</p>
+
+<h2>[PI049] - Lakes and Bulldozers</h2>
+
+
+<h3>The Problem</h3>
+
+<p>
+You are given a rectangular map with <tt>n</tt> rows and <tt>m</tt> columns that shows land and water.
+Each cell in the map contains either:
+</p>
+
+<ul>
+  <li><tt>'#'</tt> – land</li>
+  <li><tt>'.'</tt> – water</li>
+</ul>
+
+<p>
+A <b>lake</b> is a connected region of water cells (<tt>'.'</tt>) that are adjacent **horizontally or vertically** (not diagonally).
+Your task is to count how many distinct lakes exist in the initial map.
+</p>
+
+<p>
+Then, bulldozers start destroying land. When land is destroyed, it becomes water:
+</p>
+
+<ul>
+  <li><b><tt>R x</tt></b>: bulldoze all land cells in <b>row x</b> (i.e., convert all <tt>'#'</tt> to <tt>'.'</tt> in that row).</li>
+  <li><b><tt>C x</tt></b>: bulldoze all land cells in <b>column x</b> (convert all <tt>'#'</tt> to <tt>'.'</tt> in that column).</li>
+</ul>
+
+<p>
+After each bulldozing operation, new lakes might form or merge. You must print the number of lakes at each step:
+</p>
+
+<ul>
+  <li>Before any bulldozing</li>
+  <li>After each bulldozer operation</li>
+</ul>
+
+<p><b>Note:</b> Each row or column is bulldozed at most once.</p>
+
+---
+
+<h3>Example</h3>
+
+<pre>Initial map (3 rows × 4 columns):
+
+. . . #
+. . # .
+. # . #
+</pre>
+
+<p>
+Here, <tt>'.'</tt> means water and <tt>'#'</tt> means land.  
+There are <b>3 lakes</b>: water areas that are not connected to each other.
+</p>
+
+---
+
+<p><b>After bulldozing row 1 (<tt>R 1</tt>) — all land in that row becomes water:</b></p>
+
+<pre>. . . .
+. . # .
+. # . #
+</pre>
+
+<p>Now two lakes are connected, and there are <b>2 lakes</b>.</p>
+
+---
+
+<p><b>After bulldozing column 4 (<tt>C 4</tt>):</b></p>
+
+<pre>. . . .
+. . # .
+. # . .
+</pre>
+
+<p>Now all water regions are connected, so there is <b>1 lake</b>.</p>
+
+---
+
+<h3>Input</h3>
+
+<ul>
+  <li>First line: integers <tt>n</tt> and <tt>m</tt> — number of rows and columns.</li>
+  <li>Next <tt>n</tt> lines: the map of <tt>m</tt> characters (each either <tt>'.'</tt> or <tt>'#'</tt>).</li>
+  <li>Next line: integer <tt>q</tt> — number of bulldozing operations.</li>
+  <li>Next <tt>q</tt> lines: each line is either <tt>R x</tt> (bulldoze row) or <tt>C x</tt> (bulldoze column).</li>
+</ul>
+
+---
+
+<h3>Output</h3>
+
+<p>Print <tt>q + 1</tt> lines:</p>
+<ul>
+  <li>First, the number of lakes before any bulldozing.</li>
+  <li>Then, one line for each bulldozing operation with the updated number of lakes.</li>
+</ul>
+
+---
+
+<h3>Example Input 1</h3>
+
+<pre>3 4
+...#
+..#.
+.#.#
+2
+R 1
+C 4
+</pre>
+
+<h3>Example Output 1</h3>
+
+<pre>3
+2
+1
+</pre>
+
+<h2>Example Input 2</h2>
+
+<pre>3 3
+###
+###
+###
+3
+R 1
+R 3
+C 1
+</pre>
+
+<h3>Example Output2</h3>
+
+<pre>0
+1
+2
+1
+</pre>
+
+
+
+<hr size="2">
+
+<p id="pt"><img src="./9415981350194654(1)" height="20"> <b>Versão em Português</b> | [<a href="https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/9415981350194654?view+PI049_Lake_Bulldozing#en">see english version</a>]</p>
+
+<h2>[PI049] - Lagos e Bulldozers</h2>
+
+<h3>O Problema</h3>
+
+<p>
+É-lhe dado um mapa retangular com <tt>n</tt> linhas e <tt>m</tt> colunas que representa uma paisagem composta por terra e água.
+Cada célula do mapa contém:
+</p>
+
+<ul>
+  <li><tt>'#'</tt> – terra</li>
+  <li><tt>'.'</tt> – água</li>
+</ul>
+
+<p>
+Um <b>lago</b> é uma região conectada de células de água (<tt>'.'</tt>) adjacentes **horizontal ou verticalmente** (não diagonalmente).
+O seu objetivo é contar quantos lagos distintos existem no mapa inicial.
+</p>
+
+<p>
+Depois, bulldozers começam a destruir zonas de terra. Quando a terra é destruída, transforma-se em água:
+</p>
+
+<ul>
+  <li><b><tt>R x</tt></b>: destrói todas as células de terra na <b>linha x</b> (ou seja, converte todos os <tt>'#'</tt> dessa linha em <tt>'.'</tt>).</li>
+  <li><b><tt>C x</tt></b>: destrói todas as células de terra na <b>coluna x</b> (converte todos os <tt>'#'</tt> dessa coluna em <tt>'.'</tt>).</li>
+</ul>
+
+<p>
+Após cada operação de bulldozer, novos lagos podem surgir ou lagos existentes podem unir-se. Deve imprimir o número de lagos em cada etapa:
+</p>
+
+<ul>
+  <li>Antes de qualquer operação de bulldozer</li>
+  <li>Após cada operação de bulldozer</li>
+</ul>
+
+<p><b>Nota:</b> Cada linha ou coluna é destruída no máximo uma vez.</p>
+
+---
+
+<h3>Exemplo</h3>
+
+<pre>Mapa inicial (3 linhas × 4 colunas):
+
+. . . #
+. . # .
+. # . #
+</pre>
+
+<p>
+Aqui, <tt>'.'</tt> representa água e <tt>'#'</tt> representa terra.  
+Existem <b>3 lagos</b>: zonas de água que não estão conectadas entre si.
+</p>
+
+---
+
+<p><b>Após destruir a linha 1 (<tt>R 1</tt>) — toda a terra dessa linha vira água:</b></p>
+
+<pre>. . . .
+. . # .
+. # . #
+</pre>
+
+<p>Agora dois lagos ficaram conectados, e há <b>2 lagos</b>.</p>
+
+<h3>Example Input 1</h3>
+
+<pre>3 4
+...#
+..#.
+.#.#
+2
+R 1
+C 4
+</pre>
+
+<h3>Example Output 1</h3>
+
+<pre>3
+2
+1
+</pre>
+
+<h2>Example Input 2</h2>
+
+<pre>3 3
+###
+###
+###
+3
+R 1
+R 3
+C 1
+</pre>
+
+<h3>Example Output2</h3>
+
+<pre>0
+1
+2
+1
+</pre>
+
+<hr size="2">
+
+<p align="center">Programação Imperativa (CC1003)<br>
+DCC/FCUP - Faculdade de Ciências da Universidade do Porto</p>
+
+
+
+</td>
+</tr>
+</tbody></table>
+</center>
+
+
+</body></html>

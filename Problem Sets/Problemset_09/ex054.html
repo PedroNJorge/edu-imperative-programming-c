@@ -1,0 +1,263 @@
+
+<!-- saved from url=(0086)https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/9415981350194654?view+PI054_RemoveAll -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="./base.css" type="text/css">
+</head>
+<body bgcolor="white">
+<center>
+<table cellpadding="20" width="100%">
+<tbody><tr>
+<td id="Base">
+
+<title>[PI054] - Remove All Occorrences</title>
+<meta name="description" content="[PI054] - Remove All Occorrences s">
+<link rel="StyleSheet" href="./style.css" type="text/css">
+
+
+
+
+
+<p id="en"><img src="./9415981350194654" height="20"> <b>English version</b> | [<a href="https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/9415981350194654?view+PI054_RemoveAll#pt">ver versão em português</a>]</p>
+
+<h2>[PI054] Removing All Occurrences of an Element</h2>
+
+<p><img src="./9415981350194654(1)" align="center" border="0" width="500">
+
+</p><h3>Base Code</h3>
+  
+<p>Use the provided code as your base: <b>linkedList.h</b> (<a href="https://www.dcc.fc.up.pt/~fds/aulas/pi/2425/codigo/linkedList_h.html">view code</a> | <a href="https://www.dcc.fc.up.pt/~fds/aulas/pi/2425/codigo/linkedList.h">download code</a>) and <b>linkedList.c</b> (<a href="https://www.dcc.fc.up.pt/~fds/aulas/pi/2425/codigo/linkedList_c.html">view code</a> | <a href="https://www.dcc.fc.up.pt/~fds/aulas/pi/2425/codigo/linkedList.c">download code</a>), which contain
+the data structure definitions (including <tt>Node</tt> and
+<tt>LinkedList</tt>), prototype declarations, and their implementations as discussed in class. The code implements a singly linked list where the node values are of type <tt>NodeInfo</tt>, which in this problem corresponds to <tt>int</tt>. It includes the usual methods for adding and removing elements at the beginning or end, retrieving the size of the list, etc.
+
+</p><h3>The Problem</h3>
+
+<p>Extend the linked list definition with a new function:  
+<b>void removeAll(NodeInfo value, LinkedList *list)</b>, which <b>removes all occurrences of the value <i>value</i> from the list <i>list</i></b>.  
+In this problem, <tt>NodeInfo</tt> is of type <tt>int</tt>.
+
+</p><h3>Mooshak Submission</h3>
+
+<p>To submit in Mooshak, you must submit a program called <b>submit.c</b>, in which you <tt>#include</tt> the file
+<tt>linkedList.h</tt> and include your implementation of the <b>removeAll</b> function as required.
+
+</p><p>Mooshak will compile the files <tt>linkedList.c</tt>, <tt>submit.c</tt>, and <tt>test.c</tt> (provided below, containing the <tt>main()</tt> function).
+
+<!-- HTML generated using hilite.me --></p><div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007020">#include "linkedList.h"</span>
+
+<span style="color: #60a0b0; font-style: italic">// Forward declaration of function to implement</span>
+<span style="color: #902000">void</span> <span style="color: #06287e">removeAll</span>(NodeInfo x, LinkedList <span style="color: #666666">*</span>l);
+
+<span style="color: #902000">void</span> <span style="color: #06287e">printList2</span>(LinkedList <span style="color: #666666">*</span>list) {
+  Node <span style="color: #666666">*</span>curr<span style="color: #666666">=</span> list<span style="color: #666666">-&gt;</span>first;
+
+  printf(<span style="color: #4070a0">"{"</span>);
+  <span style="color: #007020; font-weight: bold">while</span> (curr <span style="color: #666666">!=</span> <span style="color: #007020">NULL</span>) {
+    printf(<span style="color: #4070a0">"%d"</span>,curr<span style="color: #666666">-&gt;</span>val);
+    curr<span style="color: #666666">=</span> curr<span style="color: #666666">-&gt;</span>next;
+    printf(<span style="color: #4070a0">"%c"</span>,<span style="color: #4070a0">",}"</span>[curr<span style="color: #666666">==</span><span style="color: #007020">NULL</span>]);
+  }
+}
+<span style="color: #902000">void</span> <span style="color: #06287e">testInt</span>(LinkedList <span style="color: #666666">*</span>list) {
+  printf(<span style="color: #4070a0">"list = "</span>);
+  printList2(list);
+  printf(<span style="color: #4070a0">"[size=%d]</span><span style="color: #4070a0; font-weight: bold">\n</span><span style="color: #4070a0">"</span>, list<span style="color: #666666">-&gt;</span>size);
+  <span style="color: #902000">int</span> value;
+  scanf(<span style="color: #4070a0">"%d"</span>, <span style="color: #666666">&amp;</span>value);
+  printf(<span style="color: #4070a0">"removeAll(%d)"</span>,value);
+  removeAll(value, list);
+  printf(<span style="color: #4070a0">"</span><span style="color: #4070a0; font-weight: bold">\n</span><span style="color: #4070a0">list = "</span>);
+  printList2(list);
+  printf(<span style="color: #4070a0">"[size=%d]</span><span style="color: #4070a0; font-weight: bold">\n</span><span style="color: #4070a0">"</span>, list<span style="color: #666666">-&gt;</span>size);
+  printf(<span style="color: #4070a0">"--------------------------------------</span><span style="color: #4070a0; font-weight: bold">\n</span><span style="color: #4070a0">"</span>);
+}
+
+<span style="color: #902000">int</span> <span style="color: #06287e">main</span>() {
+  <span style="color: #902000">int</span> ncases;
+  <span style="color: #902000">int</span> n;
+  <span style="color: #902000">int</span> value;
+  LinkedList l1;
+  
+  scanf(<span style="color: #4070a0">"%d"</span>,<span style="color: #666666">&amp;</span>ncases);            <span style="color: #60a0b0; font-style: italic">// number of cases</span>
+  <span style="color: #007020; font-weight: bold">for</span> (<span style="color: #902000">int</span> i<span style="color: #666666">=</span><span style="color: #40a070">0</span>; i<span style="color: #666666">&lt;</span>ncases; i<span style="color: #666666">++</span>) {
+    initList(<span style="color: #666666">&amp;</span>l1);
+    scanf(<span style="color: #4070a0">"%d"</span>,<span style="color: #666666">&amp;</span>n);               <span style="color: #60a0b0; font-style: italic">// number of values in the list</span>
+    <span style="color: #007020; font-weight: bold">for</span> (<span style="color: #902000">int</span> i<span style="color: #666666">=</span><span style="color: #40a070">0</span>; i<span style="color: #666666">&lt;</span>n; i<span style="color: #666666">++</span>) {
+      scanf(<span style="color: #4070a0">"%d"</span>,<span style="color: #666666">&amp;</span>value);         <span style="color: #60a0b0; font-style: italic">// the values</span>
+      addLast(<span style="color: #666666">&amp;</span>l1, value);
+    }
+    <span style="color: #60a0b0; font-style: italic">// test</span>
+    testInt(<span style="color: #666666">&amp;</span>l1);                 <span style="color: #60a0b0; font-style: italic">// test this case</span>
+  }
+}
+</pre></div>
+
+
+
+<h3>Exemplos de Input/Output</h3>
+
+<table border="1">
+  <tbody><tr>
+    <th>Lista inicial</th>
+    <th>&nbsp; Chamada &nbsp; </th>
+    <th>Estado da lista depois da chamada</th>
+  </tr>
+  <tr>
+    <td align="center">list = {1,2,2,2,1,3,4,2,1}</td>
+    <td align="center">list.removeAll(1)</td>
+    <td align="center">list = {2,2,2,3,4,2}</td>
+  </tr>
+  <tr>
+    <td align="center">list = {1,2,2,2,1,3,4,2,1}</td>
+    <td align="center">list.removeAll(2)</td>
+    <td align="center">list = {1,1,3,4,1}</td>
+  </tr>
+  <tr>
+    <td align="center">list = {1,2,2,2,1,3,4,2,1}</td>
+    <td align="center">list.removeAll(3)</td>
+    <td align="center">list = {1,2,2,2,1,4,2,1}</td>
+  </tr>
+  <tr>
+    <td align="center">list = {1,2,2,2,1,3,4,2,1}</td>
+    <td align="center">list.removeAll(5)</td>
+    <td align="center">list = {1,2,2,2,1,3,4,2,1}</td>
+  </tr>
+</tbody></table>
+
+<hr size="2">
+
+<p id="pt"><img src="./9415981350194654(2)" height="20"> <b>Versão em Português</b> | [<a href="https://mooshak.dcc.fc.up.pt/~pi/cgi-bin/execute/9415981350194654?view+PI054_RemoveAll#en">see english version</a>]</p>
+
+<h2>[PI054] Removendo todas as ocorrências de um elemento</h2>
+
+<p><img src="./9415981350194654(1)" align="center" border="0" width="500">
+
+</p><h3>Código Base</h3>
+  
+<p>Use como base o código <b>linkedList.h</b> (<a href="https://www.dcc.fc.up.pt/~fds/aulas/pi/2425/codigo/linkedList_h.html">ver
+código</a> | (<a href="https://www.dcc.fc.up.pt/~fds/aulas/pi/2425/codigo/linkedList.h">download
+código</a>) e <b>linkedList.c</b> (<a href="https://www.dcc.fc.up.pt/~fds/aulas/pi/2425/codigo/linkedList_c.html">ver
+código</a> | (<a href="https://www.dcc.fc.up.pt/~fds/aulas/pi/2425/codigo/linkedList.c">download
+código</a>) que contém as
+declarações das estruturas de dados (incluindo <tt>Node</tt> e
+<tt>LinkedList</tt>, funções protótipo e a sua implementação conforme
+dado nas aulas. O código implementa uma lista ligada simples em que os
+valores são do tipo <tt>NodeInfo</tt> que neste problema corresponde
+ao tipo <tt>int</tt>. Inclui os métodos habituais de adicionar
+e remover um elemento início ou
+no final, devolver o tamanho, etc.
+
+</p><h3>O problema</h3>
+
+<p>Acrescente à definição de listas ligadas uma nova função <b>void removeAll(NodeInfo
+value, LinkedList *list)</b> que <b>remove da lista <i>list</i> todas as ocorrências do
+valor <i>value</i></b>. Neste problema, o <tt>NodeInfo</tt> é um inteiro.
+
+</p><h3>Submissão no Mooshak</h3>
+
+<p>Para submeter no Mooshak, deverá submeter um programa
+<b>submit.c</b>, no qual faça o "include" do ficheiro
+<tt>linkedList.h</tt> e inclua a sua implementação da função
+<b>removeAll</b> como pedido.
+
+</p><p>O Mooshak compilará os ficheiros <tt>linkedList.c</tt>,
+<tt>submit.c</tt> e o <tt>test.c</tt> que se segue com a
+função <tt>main()</tt>.
+
+<!-- HTML generated using hilite.me --></p><div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007020">#include "linkedList.h"</span>
+
+<span style="color: #60a0b0; font-style: italic">// Forward declaration of function to implement</span>
+<span style="color: #902000">void</span> <span style="color: #06287e">removeAll</span>(NodeInfo x, LinkedList <span style="color: #666666">*</span>l);
+
+<span style="color: #902000">void</span> <span style="color: #06287e">printList2</span>(LinkedList <span style="color: #666666">*</span>list) {
+  Node <span style="color: #666666">*</span>curr<span style="color: #666666">=</span> list<span style="color: #666666">-&gt;</span>first;
+
+  printf(<span style="color: #4070a0">"{"</span>);
+  <span style="color: #007020; font-weight: bold">while</span> (curr <span style="color: #666666">!=</span> <span style="color: #007020">NULL</span>) {
+    printf(<span style="color: #4070a0">"%d"</span>,curr<span style="color: #666666">-&gt;</span>val);
+    curr<span style="color: #666666">=</span> curr<span style="color: #666666">-&gt;</span>next;
+    printf(<span style="color: #4070a0">"%c"</span>,<span style="color: #4070a0">",}"</span>[curr<span style="color: #666666">==</span><span style="color: #007020">NULL</span>]);
+  }
+}
+<span style="color: #902000">void</span> <span style="color: #06287e">testInt</span>(LinkedList <span style="color: #666666">*</span>list) {
+  printf(<span style="color: #4070a0">"list = "</span>);
+  printList2(list);
+  printf(<span style="color: #4070a0">"[size=%d]</span><span style="color: #4070a0; font-weight: bold">\n</span><span style="color: #4070a0">"</span>, list<span style="color: #666666">-&gt;</span>size);
+  <span style="color: #902000">int</span> value;
+  scanf(<span style="color: #4070a0">"%d"</span>, <span style="color: #666666">&amp;</span>value);
+  printf(<span style="color: #4070a0">"removeAll(%d)"</span>,value);
+  removeAll(value, list);
+  printf(<span style="color: #4070a0">"</span><span style="color: #4070a0; font-weight: bold">\n</span><span style="color: #4070a0">list = "</span>);
+  printList2(list);
+  printf(<span style="color: #4070a0">"[size=%d]</span><span style="color: #4070a0; font-weight: bold">\n</span><span style="color: #4070a0">"</span>, list<span style="color: #666666">-&gt;</span>size);
+  printf(<span style="color: #4070a0">"--------------------------------------</span><span style="color: #4070a0; font-weight: bold">\n</span><span style="color: #4070a0">"</span>);
+}
+
+<span style="color: #902000">int</span> <span style="color: #06287e">main</span>() {
+  <span style="color: #902000">int</span> ncases;
+  <span style="color: #902000">int</span> n;
+  <span style="color: #902000">int</span> value;
+  LinkedList l1;
+  
+  scanf(<span style="color: #4070a0">"%d"</span>,<span style="color: #666666">&amp;</span>ncases);            <span style="color: #60a0b0; font-style: italic">// number of cases</span>
+  <span style="color: #007020; font-weight: bold">for</span> (<span style="color: #902000">int</span> i<span style="color: #666666">=</span><span style="color: #40a070">0</span>; i<span style="color: #666666">&lt;</span>ncases; i<span style="color: #666666">++</span>) {
+    initList(<span style="color: #666666">&amp;</span>l1);
+    scanf(<span style="color: #4070a0">"%d"</span>,<span style="color: #666666">&amp;</span>n);               <span style="color: #60a0b0; font-style: italic">// number of values in the list</span>
+    <span style="color: #007020; font-weight: bold">for</span> (<span style="color: #902000">int</span> i<span style="color: #666666">=</span><span style="color: #40a070">0</span>; i<span style="color: #666666">&lt;</span>n; i<span style="color: #666666">++</span>) {
+      scanf(<span style="color: #4070a0">"%d"</span>,<span style="color: #666666">&amp;</span>value);         <span style="color: #60a0b0; font-style: italic">// the values</span>
+      addLast(<span style="color: #666666">&amp;</span>l1, value);
+    }
+    <span style="color: #60a0b0; font-style: italic">// test</span>
+    testInt(<span style="color: #666666">&amp;</span>l1);                 <span style="color: #60a0b0; font-style: italic">// test this case</span>
+  }
+}
+</pre></div>
+
+
+
+<h3>Exemplos de Input/Output</h3>
+
+<table border="1">
+  <tbody><tr>
+    <th>Lista inicial</th>
+    <th>&nbsp; Chamada &nbsp; </th>
+    <th>Estado da lista depois da chamada</th>
+  </tr>
+  <tr>
+    <td align="center">list = {1,2,2,2,1,3,4,2,1}</td>
+    <td align="center">list.removeAll(1)</td>
+    <td align="center">list = {2,2,2,3,4,2}</td>
+  </tr>
+  <tr>
+    <td align="center">list = {1,2,2,2,1,3,4,2,1}</td>
+    <td align="center">list.removeAll(2)</td>
+    <td align="center">list = {1,1,3,4,1}</td>
+  </tr>
+  <tr>
+    <td align="center">list = {1,2,2,2,1,3,4,2,1}</td>
+    <td align="center">list.removeAll(3)</td>
+    <td align="center">list = {1,2,2,2,1,4,2,1}</td>
+  </tr>
+  <tr>
+    <td align="center">list = {1,2,2,2,1,3,4,2,1}</td>
+    <td align="center">list.removeAll(5)</td>
+    <td align="center">list = {1,2,2,2,1,3,4,2,1}</td>
+  </tr>
+</tbody></table>
+
+<p></p>
+
+<hr size="2">
+<p align="center">Programação Imperativa (CC1003)<br>
+DCC/FCUP - Faculdade de Ciências da Universidade do Porto</p>
+
+
+
+
+</td>
+</tr>
+</tbody></table>
+</center>
+
+
+</body></html>
