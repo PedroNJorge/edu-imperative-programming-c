@@ -1,0 +1,141 @@
+G1
+1.1 a) (n / 100) % 10
+    b) n > 0 ? n : -n
+    c) 5 2
+    d) (n % 2 != 0)
+    e) int ndigits = 0; do {ndigits++; n /= 10;} while (n > 0);
+    f) (c >= '0' && c <= '9')
+    g) 8
+    h) s[strlen(s) - 1]
+    i) for (int i = 0; i < 4; i++) {m[i][i] = 22;}
+    j) (*p)++;
+    k) printf("%s\n", p->name);
+    l) A:
+        i = k + 1;
+       B:
+        j = k - 1;
+
+G2
+2.1 a) quadratic
+    b) constant
+    c) logarithmic
+
+2.2 a) O(1), since to define a singly linked list you use a
+        pointer to it's head, i.e. the first element.
+    b) O(n). Since to define a singly linked list you use a
+        pointer to it's head, you would need to traverse the
+        whole linked list in a worst case scenario.
+
+G3
+3.1
+int c(int n, int k) {
+    if (k == 0 || n == k) return 1;
+
+    return c(n-1, k) + c(n-1, k-1);
+}
+
+3.2
+int person_compare(const void* a, const void* b) {
+    Person* pA = (Person *)a;
+    Person* pB = (Person *)b;
+    if (pA->age == pB->age) return strcmp(pA->name, pB->name);
+    else if (pA->age < pB->age) return -1;
+    else return 1;
+}
+
+G4
+4.1
+Matrix initMatrix(int rows, int cols, int k) {
+    Matrix* m = (Matrix *)malloc(sizeof(Matrix));
+    m->rows = rows;
+    m->cols = cols;
+    m->data = (int **)malloc(rows*sizeof(int *));
+    for (int i = 0; i < rows; i++) {
+        m->data[i] = (int *)malloc(cols*sizeof(int));
+        for (int j = 0; j < cols; j++) {
+            m->data[i][j] = k;
+        }
+    }
+    return *m;
+}
+
+4.2
+void setValue(Matrix* m, int row, int col, int v) {
+    m->data[row][col] = v;
+}
+
+4.3
+void largestSum(Matrix m, int* sumMax, int* rowMax) {
+    int tempsum;
+    *sumMax = 0;
+
+    for (int i = 0; i < m.rows; i++) {
+        tempsum = 0;
+        for (int j = 0; j < m.cols; j++) {
+            tempsum += m.data[i][j];
+        }
+        if (tempsum > *sumMax) {
+            *sumMax = tempsum;
+            *rowMax = i;
+        }
+    }
+}
+
+4.4
+Matrix transpose(Matrix m) {
+    Matrix m_new = initMatrix(m.cols, m.rows, 0);
+    for (int i = 0; i < m_new.rows; i++) {
+        for (int j = 0; j < m_new.cols; j++) {
+            m_new.data[i][j] = m.data[j][i];
+        }
+    }
+    return m_new;
+}
+
+G5
+5.1 a)
+bool contains(LinkedList *l, NodeInfo x) {
+    Node* temp = l->first;
+    while (temp != NULL) {
+        if (temp->val == x) return true;
+        temp = temp->next;
+    }
+    return false;
+}
+
+    b)
+void remove(LinkedList *l, int i) {
+    if (i < 0 || i >= l->size) return;
+    l->size--;
+    Node** temp = &(l->first);
+
+    for (int j = 0; j < i; j++) {temp = &((*temp)->next));}
+    Node* node_to_remove = *temp;
+    *temp = (*temp)->next;
+    free(node_to_remove);
+}
+
+    c)
+Given the following definition of a Stack:
+typedef struct stack {
+    LinkedList* array;
+} Stack;
+I would use the function 'remove' with the 1st arg as the
+stack's array, and the 2nd arg as 0, removing always the first element.
+Then I would create a function add_to_stack(Stack* s, int n),
+that makes the head of the stack's array as the node with value n,
+where it's 'next' attribute is the old head:
+void add_to_stack(Stack* s, int n) {
+    Node* new_node = (Node *)malloc(sizeof(Node));
+    new_node->val = n;
+    new_node->next = s->array->first;
+    s->array->first = new_node;
+}
+All together, we would have:
+Stack* s = (Stack *)malloc(sizeof(Stack));
+s->array = (LinkedList *)malloc(sizeof(LinkedList));
+s->array->first = NULL;
+add_to_stack(s, 5);
+add_to_stack(s, 7);
+remove(s->array, 0);
+printf("%d\n", s->array->first->val); // Value written: 5
